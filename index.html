@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>DS Repo Viewer</title>
-<style>
-body { font-family: Arial; background: #121212; color: #fff; padding: 20px; }
-a { color: #00acee; text-decoration: none; display: block; margin: 5px 0; }
-a:hover { text-decoration: underline; }
-</style>
+  <meta charset="UTF-8">
+  <title>File Upload</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    .upload-box {
+      background: #181818;
+      border: 2px dashed #2196f3;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      color: #2196f3;
+      cursor: pointer;
+      max-width: 400px;
+      margin: 40px auto;
+      font-size: 1.2em;
+    }
+    .upload-box:hover {
+      background: #222;
+    }
+    input[type="file"] {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-<h1>DS Repo Files</h1>
-<div id="fileList"></div>
-
-<script>
-// List of files manually (or later dynamically)
-const files = [
-  "data/file1.js",
-  "data/file2.js",
-  "README.md"
-];
-
-const container = document.getElementById("fileList");
-files.forEach(f => {
-    const a = document.createElement("a");
-    a.href = `https://cdn.jsdelivr.net/gh/bluejamgit/ds/${f}`;
-    a.target = "_blank";
-    a.textContent = f;
-    container.appendChild(a);
-});
-</script>
+  <h1>Upload Files</h1>
+  <label class="upload-box" for="file-upload">
+    <span>Drag & drop files here<br>or click to upload</span>
+    <input id="file-upload" type="file" multiple>
+  </label>
 </body>
 </html>
