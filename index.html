@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DS Repo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        a {
-            color: #00acee;
-            text-decoration: none;
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        h1 {
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>DS Repo Viewer</title>
+<style>
+body { font-family: Arial; background: #121212; color: #fff; padding: 20px; }
+a { color: #00acee; text-decoration: none; display: block; margin: 5px 0; }
+a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-    <h1>Welcome to the DS GitHub Repo</h1>
-    <p>This is your repository hosted online. You can explore the files here:</p>
-    <a href="https://github.com/bluejamgit/ds" target="_blank">Open DS Repo on GitHub</a>
+<h1>DS Repo Files</h1>
+<div id="fileList"></div>
+
+<script>
+// List of files manually (or later dynamically)
+const files = [
+  "data/file1.js",
+  "data/file2.js",
+  "README.md"
+];
+
+const container = document.getElementById("fileList");
+files.forEach(f => {
+    const a = document.createElement("a");
+    a.href = `https://cdn.jsdelivr.net/gh/bluejamgit/ds/${f}`;
+    a.target = "_blank";
+    a.textContent = f;
+    container.appendChild(a);
+});
+</script>
 </body>
 </html>
